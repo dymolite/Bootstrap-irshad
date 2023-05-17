@@ -1,0 +1,16 @@
+.w-15 {
+  width: 15%;
+}
+.w-10 {
+    width: 10%;
+}
+.search-inp{
+    right: 1px;
+    width: 55px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 10px;
+}
+.icon {
+    display: block;
+}
