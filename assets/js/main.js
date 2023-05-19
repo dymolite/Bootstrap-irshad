@@ -18,7 +18,7 @@ axios.get('https://fakestoreapi.com/products').then(res => {
         `
         const addBasket = document.querySelectorAll('.add-basket');
     
-        addBasket.forEach(el => {
+        addBasket.forEach((el, j)=> {
             
             el.addEventListener('click', e => {
                 let addObj = {
@@ -26,7 +26,10 @@ axios.get('https://fakestoreapi.com/products').then(res => {
                     name: res.data[j].title,
                     description: res.data[j].description
                 }
-                localStorage.setItem("add", JSON.stringify(addObj))
+                let stored = localStorage.getItem("basketItems");
+                let basketItems = stored ? JSON.parse(stored) : [];
+                basketItems.push(addObj);
+                localStorage.setItem("basketItems", JSON.stringify(basketItems))
             })
         })
     }
